@@ -1,1 +1,30 @@
-{}
+{
+    "password": "generate one here: https://www.grc.com/passwords.htm",
+    "port": 8080,
+    "apps": [
+        {
+            "name": "development",
+            "route": "/dev",
+            // pm2 processes you want to start when /dev is triggered.
+            "background": [
+                { "name": "cors-anywhere", "cmd": "cd /path/to/cors; python3.9 main.py" },
+                { "name": "ip-test", "cmd": "cd /path/to/ip; python3.9 main.py" }
+            ],
+            
+            // scripts you want to be called when /dev is triggered.
+            "cmd": [
+                "cd /path/to/backup; ./backup mysql"
+            ]
+        },
+
+        {
+            "name": "pihole",
+            "route": "/pi-hole",
+            // "background" and "cmd" are optional. You must have one though.
+            "background": [],
+            "cmd": [
+                "cd ~/pihole-manager; ./pihole toggle"
+            ]
+        }
+    ]
+}
