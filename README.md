@@ -3,8 +3,6 @@
 
 Trigger [pm2](https://github.com/Unitech/pm2) and shell commands through [Alexa](https://developer.amazon.com/en-US/alexa). Useful for selfhosted setups and local servers.
 
-![triggers](https://raw.githubusercontent.com/Cyan903/Static-github/main/alexa-triggers/triggers.png)
-
 ## Requirements
 - **Node >=10.0.0**
 - Amazon Alexa
